@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narges Ghasemi - PhD Student in Computer Science</title>
+    <link rel="icon" type="image/x-icon" href="public/images/profile-photo.JPG">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+        
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+        
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+        
+        /* Dark mode styles */
+        .dark #root {
+            background: linear-gradient(to bottom right, rgb(17 24 39), rgb(31 41 55), rgb(17 24 39));
+            color: rgb(243 244 246);
+        }
+        
+        .dark header {
+            background-color: rgb(17 24 39 / 0.95);
+            border-color: rgb(55 65 81 / 0.5);
+        }
+        
+        .dark nav a {
+            color: rgb(209 213 219);
+        }
+        
+        .dark nav a:hover {
+            color: rgb(255 255 255);
+        }
+        
+        .dark .text-neutral-700 {
+            color: rgb(209 213 219);
+        }
+        
+        .dark .text-neutral-800 {
+            color: rgb(243 244 246);
+        }
+        
+        .dark .text-neutral-600 {
+            color: rgb(156 163 175);
+        }
+        
+        .dark .text-indigo-700 {
+            color: rgb(129 140 248);
+        }
+        
+        .dark .border-white\/50 {
+            border-color: rgb(55 65 81 / 0.5);
+        }
+        
+        .dark .bg-white\/60 {
+            background-color: rgb(31 41 55 / 0.6);
+        }
+        
+        .dark .border-neutral-200 {
+            border-color: rgb(55 65 81);
+        }
+        
+        .dark .bg-white {
+            background-color: rgb(31 41 55);
+        }
+        
+        .dark .bg-neutral-50 {
+            background-color: rgb(55 65 81);
+        }
+        
+        .dark .hover\:border-indigo-200:hover {
+            border-color: rgb(129 140 248);
+        }
+        
+        .dark .hover\:bg-white:hover {
+            background-color: rgb(75 85 99);
+        }
+        
+        .dark .hover\:border-indigo-200\/50:hover {
+            border-color: rgb(129 140 248 / 0.5);
+        }
+        
+        .dark .bg-indigo-50 {
+            background-color: rgb(31 41 55 / 0.6);
+        }
+        
+        .dark .text-indigo-700 {
+            color: rgb(129 140 248);
+        }
+        
+        .dark .hover\:bg-indigo-50:hover {
+            background-color: rgb(55 65 81 / 0.6);
+        }
+        
+        .dark .hover\:bg-rose-50:hover {
+            background-color: rgb(55 65 81 / 0.6);
+        }
+        
+        .dark .bg-neutral-100 {
+            background-color: rgb(55 65 81);
+        }
+        
+        .dark .ring-indigo-100 {
+            --tw-ring-color: rgb(129 140 248 / 0.3);
+        }
+        
+        .dark .ring-fuchsia-100 {
+            --tw-ring-color: rgb(232 121 249 / 0.3);
+        }
+        
+        .dark .ring-rose-100 {
+            --tw-ring-color: rgb(251 113 133 / 0.3);
+        }
+        
+        .dark .hover\:bg-indigo-100:hover {
+            background-color: rgb(30 27 75);
+        }
+        
+        .dark .hover\:bg-fuchsia-100:hover {
+            background-color: rgb(88 28 135);
+        }
+        
+        .dark .hover\:bg-rose-100:hover {
+            background-color: rgb(136 19 55);
+        }
+        
+        .dark .hover\:ring-indigo-200:hover {
+            --tw-ring-color: rgb(129 140 248 / 0.6);
+        }
+        
+        .dark .hover\:ring-fuchsia-200:hover {
+            --tw-ring-color: rgb(232 121 249 / 0.6);
+        }
+        
+        .dark .hover\:ring-rose-200:hover {
+            --tw-ring-color: rgb(251 113 133 / 0.6);
+        }
+        
+        /* Dark mode button styling */
+        .dark .dark-mode-btn {
+            background: linear-gradient(to right, rgb(250 204 21), rgb(249 115 22));
+            color: rgb(17 24 39);
+        }
+        
+        .dark .dark-mode-btn:hover {
+            background: linear-gradient(to right, rgb(253 224 71), rgb(251 146 60));
+        }
+        
+        /* Text colors for dark mode */
+        .dark .text-neutral-800\/90 {
+            color: rgb(229 231 235);
+        }
+        
+        /* CTA button colors for dark mode */
+        .dark .email-btn {
+            border-color: rgb(129 140 248 / 0.5);
+            background: linear-gradient(to right, rgb(99 102 241 / 0.2), rgb(168 85 247 / 0.2));
+            color: rgb(165 180 252);
+        }
+        
+        .dark .email-btn:hover {
+            border-color: rgb(129 140 248);
+            background: linear-gradient(to right, rgb(99 102 241 / 0.3), rgb(168 85 247 / 0.3));
+        }
+        
+        .dark .github-btn {
+            border-color: rgb(107 114 128 / 0.5);
+            background: linear-gradient(to right, rgb(75 85 99 / 0.2), rgb(55 65 81 / 0.2));
+            color: rgb(209 213 219);
+        }
+        
+        .dark .github-btn:hover {
+            border-color: rgb(156 163 175);
+            background: linear-gradient(to right, rgb(107 114 128 / 0.3), rgb(75 85 99 / 0.3));
+        }
+        
+        .dark .linkedin-btn {
+            border-color: rgb(96 165 250 / 0.5);
+            background: linear-gradient(to right, rgb(59 130 246 / 0.2), rgb(37 99 235 / 0.2));
+            color: rgb(147 197 253);
+        }
+        
+        .dark .linkedin-btn:hover {
+            border-color: rgb(147 197 253);
+            background: linear-gradient(to right, rgb(96 165 250 / 0.3), rgb(59 130 246 / 0.3));
+        }
+        
+        .dark .cv-btn {
+            border-color: rgb(52 211 153 / 0.5);
+            background: linear-gradient(to right, rgb(16 185 129 / 0.2), rgb(20 184 166 / 0.2));
+            color: rgb(110 231 183);
+        }
+        
+        .dark .cv-btn:hover {
+            border-color: rgb(110 231 183);
+            background: linear-gradient(to right, rgb(52 211 153 / 0.3), rgb(45 212 191 / 0.3));
+        }
+        
+        /* Contact section icons */
+        .dark .contact-email {
+            border-color: rgb(75 85 99);
+            background-color: rgb(31 41 55);
+        }
+        
+        .dark .contact-email:hover {
+            border-color: rgb(129 140 248);
+            background-color: rgb(30 27 75);
+        }
+        
+        .dark .contact-github {
+            border-color: rgb(75 85 99);
+            background-color: rgb(31 41 55);
+        }
+        
+        .dark .contact-github:hover {
+            border-color: rgb(156 163 175);
+            background-color: rgb(55 65 81);
+        }
+        
+        .dark .contact-linkedin {
+            border-color: rgb(75 85 99);
+            background-color: rgb(31 41 55);
+        }
+        
+        .dark .contact-linkedin:hover {
+            border-color: rgb(96 165 250);
+            background-color: rgb(30 58 138);
+        }
+        
+        /* Teaching Assistant tags dark mode */
+        .dark .teaching-assistant-tag {
+            background-color: rgb(99 102 241 / 0.3);
+            color: rgb(165 180 252);
+        }
+        
+        .dark .teaching-assistant-tag:hover {
+            background-color: rgb(99 102 241 / 0.4);
+        }
+        
+        .bg-gradient-to-br {
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+        }
+        
+        .bg-gradient-to-b {
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+        }
+        
+        /* Make fonts smaller */
+        html {
+            font-size: 14px; /* Reduce base font size from 16px to 14px */
+        }
+        
+        /* Adjust specific font sizes */
+        h1 {
+            font-size: 2.25rem !important; /* Reduce from 2.5rem */
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3rem !important; /* Reduce from 3.5rem */
+            }
+        }
+        
+        h2 {
+            font-size: 1.5rem !important; /* Reduce from text-2xl */
+        }
+        
+        h3 {
+            font-size: 1.125rem !important; /* Reduce from text-lg */
+        }
+        
+        p {
+            font-size: 0.875rem !important; /* Reduce from text-base */
+        }
+        
+        /* Bio text should be smaller */
+        .bio-text {
+            font-size: 15px !important; /* Smaller than before */
+        }
+        
+        @media (min-width: 768px) {
+            .bio-text {
+                font-size: 17px !important; /* Smaller than before */
+            }
+        }
+        
+        .text-lg {
+            font-size: 1rem !important; /* Reduce from text-lg */
+        }
+        
+        .text-xl {
+            font-size: 1.125rem !important; /* Reduce from text-xl */
+        }
+        
+        .text-2xl {
+            font-size: 1.25rem !important; /* Reduce from text-2xl */
+        }
+        
+        .text-sm {
+            font-size: 0.75rem !important; /* Reduce from text-sm */
+        }
+        
+        .text-xs {
+            font-size: 0.625rem !important; /* Reduce from text-xs */
+        }
+        
+        /* Ph.D. Student text should be larger */
+        .phd-title {
+            font-size: 1.125rem !important; /* Larger than normal text */
+        }
+        
+        @media (min-width: 768px) {
+            .phd-title {
+                font-size: 1.5rem !important; /* Larger on desktop */
+            }
+        }
+        
+        /* Make boxes smaller */
+        .rounded-3xl {
+            border-radius: 1rem !important; /* Reduce from 1.5rem */
+        }
+        
+        .rounded-2xl {
+            border-radius: 0.75rem !important; /* Reduce from 1rem */
+        }
+        
+        .rounded-xl {
+            border-radius: 0.5rem !important; /* Reduce from 0.75rem */
+        }
+        
+        /* Reduce padding in cards */
+        .p-4 {
+            padding: 0.625rem !important; /* Reduce from 1rem */
+        }
+        
+        .p-5 {
+            padding: 0.875rem !important; /* Reduce from 1.25rem */
+        }
+        
+        .p-6 {
+            padding: 1rem !important; /* Reduce from 1.5rem */
+        }
+        
+        /* Reduce margins */
+        .pt-16 {
+            padding-top: 2.5rem !important; /* Reduce from 4rem */
+        }
+        
+        .pt-10 {
+            padding-top: 1.5rem !important; /* Reduce from 2.5rem */
+        }
+        
+        .pb-16 {
+            padding-bottom: 2.5rem !important; /* Reduce from 4rem */
+        }
+        
+        .mt-6 {
+            margin-top: 0.75rem !important; /* Reduce from 1.5rem */
+        }
+        
+        .mt-7 {
+            margin-top: 1rem !important; /* Reduce from 1.75rem */
+        }
+        
+        .gap-6 {
+            gap: 0.75rem !important; /* Reduce from 1.5rem */
+        }
+        
+        .gap-4 {
+            gap: 0.625rem !important; /* Reduce from 1rem */
+        }
+        
+        .gap-3 {
+            gap: 0.375rem !important; /* Reduce from 0.75rem */
+        }
+        
+        /* Reduce university logo sizes */
+        .h-16 {
+            height: 3rem !important; /* Reduce from 4rem */
+        }
+        
+        .w-20 {
+            width: 4rem !important; /* Reduce from 5rem */
+        }
+        
+        /* Make skills tags larger */
+        .skills-section .text-xs {
+            font-size: 0.75rem !important; /* Larger than normal text-xs */
+            padding: 0.375rem 0.75rem !important; /* More padding */
+        }
+        
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops));
+        }
+        
+        .from-indigo-600 { --tw-gradient-from: #4f46e5; --tw-gradient-to: rgb(79 70 229 / 0); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+        .via-fuchsia-600 { --tw-gradient-to: rgb(192 38 211 / 0); --tw-gradient-stops: var(--tw-gradient-from), #c026d3, var(--tw-gradient-to); }
+        .to-rose-500 { --tw-gradient-to: #f43f5e; }
+        
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .text-transparent {
+            color: transparent;
+        }
+        
+        .supports-\[backdrop-filter\]\:bg-gray-900\/80:has(.backdrop-blur-md) {
+            background-color: rgb(17 24 39 / 0.8);
+        }
+        
+        .supports-\[backdrop-filter\]\:bg-white\/80:has(.backdrop-blur-md) {
+            background-color: rgb(255 255 255 / 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="min-h-screen relative overflow-hidden transition-colors duration-300 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-neutral-900">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-20 bg-blue-300 blur-3xl animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-20 bg-purple-300 blur-3xl animate-pulse"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-10 bg-indigo-300 blur-3xl animate-pulse"></div>
+        </div>
+        
+        <!-- Top gradient bar -->
+        <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 relative z-10"></div>
+
+        <!-- Header -->
+        <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/95 border-b border-neutral-200/50 shadow-lg">
+            <div class="mx-auto max-w-6xl px-4">
+                <div class="flex items-center justify-between py-3">
+                    <a href="#top" class="font-semibold tracking-tight text-lg">Narges Ghasemi</a>
+                    <div class="flex items-center gap-6">
+                        <nav class="hidden md:flex items-center gap-6 text-sm">
+                            <a href="#about" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">About</a>
+                            <a href="#experience" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Experience</a>
+                            <a href="#news" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">News</a>
+                            <a href="#publications" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Publications</a>
+                            <a href="#projects" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Projects</a>
+                            <a href="#teaching" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Teaching</a>
+                            <a href="#skills" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Skills</a>
+                            <a href="#contact" class="transition-all duration-300 hover:scale-110 hover:font-medium text-neutral-600 hover:text-neutral-900 px-2 py-1 rounded-md hover:bg-neutral-100">Contact</a>
+                        </nav>
+                        <!-- Dark Mode Toggle -->
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg bg-gradient-to-r from-gray-700 to-gray-800 text-gray-200 hover:from-gray-600 hover:to-gray-700 dark-mode-btn" aria-label="Toggle dark mode">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero / About -->
+        <section id="about" class="relative pt-20">
+            <!-- Soft background glow -->
+            <div class="pointer-events-none absolute inset-0 -z-10" style="background: radial-gradient(600px 300px at 20% 25%, rgba(99,102,241,0.12), transparent), radial-gradient(600px 300px at 85% 5%, rgba(244,63,94,0.10), transparent);"></div>
+            <div class="relative mx-auto max-w-6xl px-4 pt-10 md:pt-16">
+                <div class="flex gap-6 md:gap-10 items-start">
+                    <!-- Photo with gradient frame -->
+                    <div class="rounded-3xl p-[3px] bg-gradient-to-br from-indigo-600/40 via-fuchsia-600/40 to-rose-500/40 shadow-xl shrink-0 transition-all duration-500 hover:shadow-2xl hover:scale-105">
+                        <img src="public/images/profile-photo.JPG" alt="Narges Ghasemi headshot" class="rounded-2xl w-[100px] h-[100px] md:w-[240px] md:h-[240px] object-cover bg-white transition-transform duration-500 hover:scale-105" />
+                    </div>
+
+                    <!-- Texts -->
+                    <div class="min-w-0">
+                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 leading-[1.05] pb-1">Narges Ghasemi</h1>
+                        <p class="mt-2 text-lg md:text-2xl font-medium text-neutral-800/90 phd-title">Ph.D. Student in Computer Science • University of Southern California</p>
+                        <p class="mt-2 flex items-center gap-2 text-neutral-700">
+                            <svg class="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Los Angeles, CA
+                        </p>
+                        <p class="mt-6 md:mt-7 text-[17px] md:text-[19px] leading-8 max-w-3xl text-neutral-800 bio-text">I'm a 3rd year PhD student in Computer Science at USC at CuteLabName Lab, advised by Prof. Jonathan May. My work centers on Large Language Models, including steerability, activation engineering, bias detection, and unfaithful reasoning.</p>
+
+                        <!-- CTAs -->
+                        <div class="mt-7 flex flex-wrap items-center gap-3">
+                            <a href="mailto:nghasemi@usc.edu" class="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 border-indigo-200 bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-800 hover:border-indigo-300 hover:from-indigo-100 hover:to-purple-100 email-btn">
+                                <svg class="h-5 w-5 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                Email
+                            </a>
+                            <a href="https://github.com/NNargesNN" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800 hover:border-gray-300 hover:from-gray-100 hover:to-gray-200 github-btn">
+                                <svg class="h-5 w-5 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/nnargesnn" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 border-blue-200 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 hover:border-blue-300 hover:from-blue-100 hover:to-blue-200 linkedin-btn">
+                                <svg class="h-5 w-5 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="public/Narges_Ghasemi_CV.pdf" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-800 hover:border-emerald-300 hover:from-emerald-100 hover:to-teal-100 cv-btn">
+                                <svg class="h-5 w-5 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                CV
+                            </a>
+                        </div>
+
+                        <!-- Interests -->
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <span class="rounded-full border px-3 py-1 text-sm transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border-neutral-300/70 bg-white/60 backdrop-blur ring-1 ring-indigo-600/10 hover:ring-indigo-600/20 hover:bg-indigo-50">Large Language Models</span>
+                            <span class="rounded-full border px-3 py-1 text-sm transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border-neutral-300/70 bg-white/60 backdrop-blur ring-1 ring-indigo-600/10 hover:ring-indigo-600/20 hover:bg-indigo-50">Computer Vision</span>
+                            <span class="rounded-full border px-3 py-1 text-sm transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border-neutral-300/70 bg-white/60 backdrop-blur ring-1 ring-indigo-600/10 hover:ring-indigo-600/20 hover:bg-indigo-50">Machine Learning</span>
+                            <span class="rounded-full border px-3 py-1 text-sm transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border-neutral-300/70 bg-white/60 backdrop-blur ring-1 ring-indigo-600/10 hover:ring-indigo-600/20 hover:bg-indigo-50">Interpretability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="mx-auto max-w-6xl px-4 pt-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Experience
+            </h2>
+            
+            <!-- USC Experience -->
+            <div class="mt-6 rounded-3xl border overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                <div class="p-4 md:p-6">
+                    <div class="flex items-center gap-3">
+                        <img src="public/images/usc-logo.jpg" alt="University of Southern California logo" class="h-16 w-20 rounded-lg ring-1 ring-black/10 bg-white object-contain transition-transform duration-300 hover:scale-110" />
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-semibold">University of Southern California</h3>
+                            <p class="text-sm text-neutral-600">Los Angeles, CA</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid gap-4">
+                        <div class="rounded-xl border p-4 transition-all duration-300 hover:shadow-md border-neutral-200 bg-neutral-50 hover:bg-white hover:border-indigo-200">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <p class="text-lg md:text-xl font-semibold text-indigo-700">NLP Researcher</p>
+                                <p class="text-sm text-neutral-600">Jul 2025 – Present</p>
+                            </div>
+                            <p class="mt-1 text-neutral-700">CuteLabName Lab, USC (Advisor: Prof. Jonathan May)</p>
+                            <ul class="mt-2 list-disc pl-5 text-neutral-800">
+                                <li>Conducting research in natural language processing with a focus on the interpretability and alignment of large language
+                                    models</li> 
+                                <li>Areas of focus include large language models, model steerability, activation engineering, bias detection, and unfaithful
+                                    reasoning</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl border p-4 transition-all duration-300 hover:shadow-md border-neutral-200 bg-neutral-50 hover:bg-white hover:border-indigo-200">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <p class="text-lg md:text-xl font-semibold text-indigo-700">CV Researcher</p>
+                                <p class="text-sm text-neutral-600">Aug 2023 – Jul 2025</p>
+                            </div>
+                            <p class="mt-1 text-neutral-700">Infolab, USC</p>
+                            <ul class="mt-2 list-disc pl-5 text-neutral-800">
+                                <!-- <li>Geospatial computer vision: diffusion for satellite imagery, autoregressive vision-spatial modeling, urban analytics.</li> -->
+                            <li>Conducted research in geospatial computer vision with a focus on generative modeling and vision-spatial analysis.</li>
+                            <li>Areas of focus include generative diffusion models for satellite imagery, autoregressive modeling for vision-spatial data,
+                                and object detection for urban analytics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SBU Experience -->
+            <div class="mt-6 rounded-3xl border overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                <div class="p-4 md:p-6">
+                    <div class="flex items-center gap-3">
+                        <img src="public/images/sbu-logo.jpeg" alt="Shahid Beheshti University logo" class="h-16 w-20 rounded-lg ring-1 ring-black/10 bg-white object-contain transition-transform duration-300 hover:scale-110" />
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-semibold">Shahid Beheshti University</h3>
+                            <p class="text-sm text-neutral-600">Tehran, Iran</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid gap-4">
+                        <div class="rounded-xl border p-4 transition-all duration-300 hover:shadow-md border-neutral-200 bg-neutral-50 hover:bg-white hover:border-indigo-200">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <p class="text-lg md:text-xl font-semibold text-indigo-700">CV Researcher</p>
+                                <p class="text-sm text-neutral-600">Sep 2022 – Feb 2023</p>
+                            </div>
+                            <p class="mt-1 text-neutral-700">Image Processing & Distributed Systems Lab, SBU</p>
+                            <ul class="mt-2 list-disc pl-5 text-neutral-800">
+                                <!-- <li>Spatiotemporal forecasting for 4D CT radiotherapy; chaotic activations for non-linear breathing dynamics.</li> -->
+                                 <li> Conducted thesis on spatiotemporal forecasting to predict respiratory motion in 4D CT scans
+                                    </li>
+                                    <li> Developed novel chaotic activation functions and chaotic feature extractors to model non-linear breathing dynamics for
+                                        radiotherapy planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IPM Experience -->
+            <div class="mt-6 rounded-3xl border overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                <div class="p-4 md:p-6">
+                    <div class="flex items-center gap-3">
+                        <img src="public/images/ipm-logo.jpeg" alt="Institute for Research in Fundamental Sciences logo" class="h-16 w-20 rounded-lg ring-1 ring-black/10 bg-white object-contain transition-transform duration-300 hover:scale-110" />
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-semibold">Institute for Research in Fundamental Sciences (IPM)</h3>
+                            <p class="text-sm text-neutral-600">Tehran, Iran</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid gap-4">
+                        <div class="rounded-xl border p-4 transition-all duration-300 hover:shadow-md border-neutral-200 bg-neutral-50 hover:bg-white hover:border-indigo-200">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <p class="text-lg md:text-xl font-semibold text-indigo-700">Machine Learning Intern</p>
+                                <p class="text-sm text-neutral-600">Jun 2021 – Sep 2021</p>
+                            </div>
+                            <p class="mt-1 text-neutral-700">IPM (Institute for Research in Fundamental Sciences)</p>
+                            <ul class="mt-2 list-disc pl-5 text-neutral-800">
+                                <li>Developed a stock price and trend prediction model using a hybrid CNN-LSTM framework to capture multi-scale
+                                    patterns in financial data.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section id="news" class="mx-auto max-w-6xl px-4 pt-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                </svg>
+                News
+            </h2>
+            <div class="mt-6 rounded-2xl border overflow-hidden border-neutral-200 bg-white">
+                <div class="h-1 w-full bg-indigo-600"></div>
+                <ul class="p-4 md:p-6 space-y-4">
+                    <li class="flex gap-4 items-start">
+                        <div class="w-28 shrink-0 text-sm font-semibold uppercase px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">Oct 2025</div>
+                        <div class="flex-1">
+                            <p class="leading-7">
+                                <span class="mr-2">📣</span><span class="font-medium">GeoToken accepted to IEEE ICDM 2025.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="w-28 shrink-0 text-sm font-semibold uppercase px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">Sep 2025</div>
+                        <div class="flex-1">
+                            <p class="leading-7">
+                                <span class="mr-2">📣</span><span class="font-medium">OSMGen accepted to the NeurIPS 2025 UrbanAI Workshop.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="w-28 shrink-0 text-sm font-semibold uppercase px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">Aug 2025</div>
+                        <div class="flex-1">
+                            <p class="leading-7">
+                                <span class="mr-2">📣</span><span class="font-medium">Our paper got accepted to ISVC 2025.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="w-28 shrink-0 text-sm font-semibold uppercase px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">Oct 2024</div>
+                        <div class="flex-1">
+                            <p class="leading-7">
+                                <span class="mr-2">📣</span><span class="font-medium">Our paper got accepted to MMM 2025.</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="w-28 shrink-0 text-sm font-semibold uppercase px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 flex items-center justify-center">Mar 2024</div>
+                        <div class="flex-1">
+                            <p class="leading-7">
+                                <span class="mr-2">📣</span><span class="font-medium">CCLSTM accepted to IMPROVE 2024.</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="mx-auto max-w-6xl px-4 pt-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                Publications
+            </h2>
+            <div class="mt-6 space-y-4">
+                <article class="relative rounded-3xl border p-4 md:p-5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="pl-4 md:pl-5">
+                        <h3 class="font-semibold leading-6">📄 <span class="underline decoration-indigo-300/60 decoration-2 underline-offset-4">GeoToken: Hierarchical Geolocalization of Images via Next Token Prediction</span></h3>
+                        <p class="mt-1 text-[15px] text-neutral-700"><strong>Narges Ghasemi</strong>*, Amir Ziashahabi*, Salman Avestimehr, Cyrus Shahabi</p>
+                        <div class="mt-2 flex items-center gap-2 text-sm flex-wrap">
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 hover:from-indigo-200 hover:to-purple-200">IEEE International Conference on Data Mining (ICDM), 2025</span>
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border border-green-200 hover:from-green-200 hover:to-emerald-200">Accepted</span>
+                            <a href="https://github.com/NNargesNN/GeoToken" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-green-50 text-green-700 border border-green-200 hover:bg-green-100 hover:border-green-300 transition-all duration-300 hover:scale-105">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="relative rounded-3xl border p-4 md:p-5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="pl-4 md:pl-5">
+                        <h3 class="font-semibold leading-6">📄 <span class="underline decoration-indigo-300/60 decoration-2 underline-offset-4">OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data</span></h3>
+                        <p class="mt-1 text-[15px] text-neutral-700">Amir Ziashahabi*, <strong>Narges Ghasemi</strong>*, Sajjad Shahabi, John Krumm, Salman Avestimehr, Cyrus Shahabi</p>
+                        <div class="mt-2 flex items-center gap-2 text-sm flex-wrap">
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 hover:from-indigo-200 hover:to-purple-200">NeurIPS 2025 UrbanAI Workshop, 2025</span>
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border border-green-200 hover:from-green-200 hover:to-emerald-200">Accepted</span>
+                            <a href="https://github.com/amir-zsh/OSMGen" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-green-50 text-green-700 border border-green-200 hover:bg-green-100 hover:border-green-300 transition-all duration-300 hover:scale-105">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="relative rounded-3xl border p-4 md:p-5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="pl-4 md:pl-5">
+                        <h3 class="font-semibold leading-6">📄 <span class="underline decoration-indigo-300/60 decoration-2 underline-offset-4">Assessment of Foot Clearance Impairments in Glaucoma Patients Using Smart Insoles</span></h3>
+                        <p class="mt-1 text-[15px] text-neutral-700">Navid Amini, <strong>Narges Ghasemi</strong>, Manveen Kaur, Mohammad Pourhomayoun, Kouros Nouri-Mahdavi</p>
+                        <div class="mt-2 flex items-center gap-2 text-sm flex-wrap">
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 hover:from-indigo-200 hover:to-purple-200">International Symposium on Visual Computing (ISVC), 2025</span>
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border border-green-200 hover:from-green-200 hover:to-emerald-200">Accepted</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="relative rounded-3xl border p-4 md:p-5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="pl-4 md:pl-5">
+                        <h3 class="font-semibold leading-6">📄 <span class="underline decoration-indigo-300/60 decoration-2 underline-offset-4">Counting Unique Objects in Geo-Tagged Street Images: A Case Study of Homeless Encampments in Los Angeles</span></h3>
+                        <p class="mt-1 text-[15px] text-neutral-700"><strong>Narges Ghasemi</strong>, Seon Ho Kim, Abdullah Alfarrarjeh, Cyrus Shahabi</p>
+                        <div class="mt-2 flex items-center gap-2 text-sm flex-wrap">
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 hover:from-indigo-200 hover:to-purple-200">International Conference on Multimedia Modeling (MMM), 2025</span>
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 border border-blue-200 hover:from-blue-200 hover:to-cyan-200">Published</span>
+                            <a href="https://link.springer.com/chapter/10.1007/978-981-96-2074-6_3" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 hover:scale-105">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Paper
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="relative rounded-3xl border p-4 md:p-5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="pl-4 md:pl-5">
+                        <h3 class="font-semibold leading-6">📄 <span class="underline decoration-indigo-300/60 decoration-2 underline-offset-4">Chaotic Convolutional Long Short-Term Memory Network for Respiratory Motion Prediction</span></h3>
+                        <p class="mt-1 text-[15px] text-neutral-700"><strong>Narges Ghasemi</strong>, Shahabedin Nabavi, Mohsen Ebrahimi Moghadam, Yasser Shekofteh</p>
+                        <div class="mt-2 flex items-center gap-2 text-sm flex-wrap">
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 border border-indigo-200 hover:from-indigo-200 hover:to-purple-200">International Conference on Image Processing and Vision Engineering (IMPROVE), 2024</span>
+                            <span class="rounded-full px-2 py-0.5 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 border border-blue-200 hover:from-blue-200 hover:to-cyan-200">Published</span>
+                            <a href="https://www.researchgate.net/profile/Shahabedin-Nabavi-2/publication/380387995_Chaotic_Convolutional_Long_Short-Term_Memory_Network_for_Respiratory_Motion_Prediction/links/6651c1de0b0d2845745843f8/Chaotic-Convolutional-Long-Short-Term-Memory-Network-for-Respiratory-Motion-Prediction.pdf" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 hover:scale-105">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Paper
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mx-auto max-w-6xl px-4 pt-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                </svg>
+                Projects
+            </h2>
+            <p class="mt-3 text-neutral-700 text-xs">Click tiles with GitHub links to open the repository. Images are placeholders you can replace.</p>
+            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-6 flex items-center justify-center gap-2">
+                <button onclick="prevPage()" class="px-3 py-1.5 rounded-lg border transition-all duration-300 hover:shadow disabled:opacity-50 border-neutral-200 bg-white hover:shadow" disabled id="prevBtn">Prev</button>
+                <span class="text-sm text-neutral-700">Page <span id="currentPage">1</span> / <span id="totalPages">2</span></span>
+                <button onclick="nextPage()" class="px-3 py-1.5 rounded-lg border transition-all duration-300 hover:shadow disabled:opacity-50 border-neutral-200 bg-white hover:shadow" id="nextBtn">Next</button>
+            </div>
+        </section>
+
+        <!-- Teaching -->
+        <section id="teaching" class="mx-auto max-w-6xl px-4 pt-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                </svg>
+                Teaching
+            </h2>
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                <!-- USC -->
+                <div class="rounded-3xl border overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="p-4 md:p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold flex items-center gap-2"><span class="text-indigo-600">🎓</span>University of Southern California</h3>
+                                <span class="text-xs rounded-full bg-indigo-50 text-indigo-700 px-2.5 py-1 transition-all duration-300 hover:bg-indigo-100 hover:scale-105 teaching-assistant-tag">Teaching Assistant</span>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-indigo-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-indigo-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Machine Learning for Data Science</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-indigo-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-indigo-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Introduction to Artificial Intelligence</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- SBU -->
+                <div class="rounded-3xl border overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <div class="h-1 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                    <div class="p-4 md:p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold flex items-center gap-2"><span class="text-rose-600">🎓</span>Shahid Beheshti University</h3>
+                                <span class="text-xs rounded-full bg-indigo-50 text-indigo-700 px-2.5 py-1 transition-all duration-300 hover:bg-indigo-100 hover:scale-105 teaching-assistant-tag">Teaching Assistant</span>
+                        </div>
+                        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Machine Learning (Graduate)</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Software/Hardware Codesign</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Computer Simulation</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Artificial Intelligence</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Operating Systems</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Discrete Mathematics</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Linear Algebra</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Signals & Systems</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Engineering Mathematics</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Design & Analysis of Algorithms</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Advanced Programming</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-all duration-300 hover:bg-rose-50 hover:rounded-lg hover:p-2 hover:-mx-2">
+                                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-300 transition-all duration-300 hover:bg-rose-500 hover:scale-125"></span>
+                                <span class="font-medium leading-7">Theory of Languages & Automata</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="mx-auto max-w-6xl px-4 pt-16 skills-section">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                Skills
+            </h2>
+            <div class="mt-6 grid md:grid-cols-3 gap-6">
+                <div class="rounded-3xl border p-5 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <h3 class="font-semibold mb-3 flex items-center gap-2"><span>💻</span>Programming Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">Python</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">MATLAB</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">Java</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">C/C++</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">SQL</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">C#</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">CSS</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">HTML</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">Go</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-indigo-100 hover:bg-indigo-100 hover:ring-indigo-200">JavaScript</span>
+                    </div>
+                </div>
+                <div class="rounded-3xl border p-5 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <h3 class="font-semibold mb-3 flex items-center gap-2"><span>🧪</span>Frameworks & Libraries</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">PyTorch</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">TensorFlow</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">Keras</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">Scikit-learn</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">OpenCV</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">Pandas</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">NumPy</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">Django</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-fuchsia-100 hover:bg-fuchsia-100 hover:ring-fuchsia-200">GeoPy</span>
+                    </div>
+                </div>
+                <div class="rounded-3xl border p-5 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] backdrop-blur-md border-white/50 bg-white/60 hover:border-indigo-200/50 shadow-xl">
+                    <h3 class="font-semibold mb-3 flex items-center gap-2"><span>⚙️</span>Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-rose-100 hover:bg-rose-100 hover:ring-rose-200">Azure</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-rose-100 hover:bg-rose-100 hover:ring-rose-200">AWS</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-rose-100 hover:bg-rose-100 hover:ring-rose-200">Git</span>
+                        <span class="text-xs rounded-full px-2.5 py-1 transition-all duration-300 hover:scale-105 bg-neutral-100 ring-1 ring-rose-100 hover:bg-rose-100 hover:ring-rose-200">LaTeX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mx-auto max-w-6xl px-4 pt-10 pb-16">
+            <h2 class="text-2xl font-semibold tracking-tight flex items-center gap-2">
+                <svg class="h-6 w-6 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Contact
+            </h2>
+            <!-- Large icon row -->
+            <div class="mt-4 flex items-center gap-4">
+                <a aria-label="Email" href="mailto:nghasemi@usc.edu" class="grid place-items-center h-14 w-14 md:h-16 md:w-16 rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-neutral-200 bg-white hover:border-indigo-300 hover:bg-indigo-50 contact-email">
+                    <svg class="h-7 w-7 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </a>
+                <a aria-label="GitHub" href="https://github.com/NNargesNN" target="_blank" rel="noreferrer" class="grid place-items-center h-14 w-14 md:h-16 md:w-16 rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-neutral-200 bg-white hover:border-gray-300 hover:bg-gray-50 contact-github">
+                    <svg class="h-7 w-7 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a aria-label="LinkedIn" href="https://linkedin.com/in/nnargesnn" target="_blank" rel="noreferrer" class="grid place-items-center h-14 w-14 md:h-16 md:w-16 rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-neutral-200 bg-white hover:border-blue-300 hover:bg-blue-50 contact-linkedin">
+                    <svg class="h-7 w-7 transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t py-10 backdrop-blur-md border-neutral-200/50 bg-white/60">
+            <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-600">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p>&copy; 2024 Narges Ghasemi. All rights reserved.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="mailto:nghasemi@usc.edu" class="transition-all duration-300 hover:scale-110 hover:text-indigo-600">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/NNargesNN" target="_blank" rel="noreferrer" class="transition-all duration-300 hover:scale-110 hover:text-indigo-600">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/nnargesnn" target="_blank" rel="noreferrer" class="transition-all duration-300 hover:scale-110 hover:text-indigo-600">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Projects data exactly from your React app
+            const PROJECTS = [
+                { title: "GeoToken", description: "Geolocalization framed as next-token prediction for accurate location inference.", tags: ["Python", "PyTorch", "Transformers"], image: "public/images/projects/geotoken.png", href: "https://github.com/NNargesNN/GeoToken" },
+                { title: "OSMGen", description: "Satellite image generation conditioned on OpenStreetMap for structure-faithful, controllable outputs.", tags: ["Diffusion", "PyTorch", "Transformers"], image: "public/images/projects/osmgen.png", href: "https://github.com/amir-zsh/OSMGen" },
+                // { title: "GeoImage2Vec", description: "Contrastive multimodal georeferenced image representation.", tags: ["PyTorch", "Contrastive Learning"], image: "public/images/projects/geoimage2vec.jpg", href: "#" },
+                // { title: "Truck Detection & Counting", description: "YOLO and (Deep/Strong)SORT for urban traffic analytics.", tags: ["YOLO", "Tracking"], image: "public/images/projects/truck-detection.jpg", href: "#" },
+                { title: "Flash Reflection Removal", description: "U-Net based reflection removal.", tags: ["U-Net", "Image Processing"], image: "public/images/projects/FRR.png", href: "#" },
+                { title: "Chaotic Respiratory Motion Prediction", description: "Spatiotemporal forecasting for 4D CT radiotherapy", tags: ["TensorFlow", "ConvLSTM"], image: "public/images/projects/cclstm.png", href: "#" },
+                { title: "Stock Prediction", description: "CNN–LSTM for stock trends (internship).", tags: ["TensorFlow", "Time Series"], image: "public/images/projects/stock.png", href: "#" },
+                // { title: "Hamshahri News Classification", description: "SVM baseline; ranked 2nd in a Kaggle task.", tags: ["Scikit-learn", "SVM"], image: "https://placehold.co/640x360/png?text=Project+Image", href: "https://github.com/NNargesNN/News-Classification" },
+                { title: "Othello Game", description: "Minimax with Alpha–Beta pruning; GUI.", tags: ["Python", "AI"], image: "public/images/projects/othello.png", href: "https://github.com/NNargesNN/Othello-Game" },
+                { title: "Tetris Game", description: "Tetris game using Assembly 8086.", tags: ["Assembly", "8086"], image: "public/images/projects/Tetris.png", href: "https://github.com/NNargesNN/Tetris-8086" },
+                { title: "Minesweeper (MATLAB)", description: "Classic graphical implementation.", tags: ["MATLAB"], image: "public/images/projects/minesweeper.png", href: "https://github.com/NNargesNN/Minesweeper-Game" },
+                { title: "2Cars Game", description: "A fast 2D game.", tags: ["C++"], image: "public/images/projects/2cars.png", href: "https://github.com/NNargesNN/2Cars-Game" },
+                { title: "Jetpack Game", description: "2D game using SBDL.", tags: ["C++", "SBDL"], image: "public/images/projects/Jetpack.png", href: "https://github.com/NNargesNN/Jetpack-Game" },
+            ];
+
+            let isDarkMode = false;
+            let currentPage = 1;
+            const PAGE_SIZE = 6;
+            const totalPages = Math.ceil(PROJECTS.length / PAGE_SIZE);
+
+            // Check if project is clickable (has GitHub link)
+            function isClickable(href) {
+                return href && href !== "#" && href.includes("github.com");
+            }
+
+            // Generate project card HTML
+            function generateProjectCard(proj, idx) {
+                const clickable = isClickable(proj.href);
+                const tagColors = isDarkMode ? [
+                    "bg-blue-900 text-blue-200 border-blue-700",
+                    "bg-green-900 text-green-200 border-green-700", 
+                    "bg-purple-900 text-purple-200 border-purple-700",
+                    "bg-orange-900 text-orange-200 border-orange-700",
+                    "bg-pink-900 text-pink-200 border-pink-700",
+                    "bg-indigo-900 text-indigo-200 border-indigo-700",
+                    "bg-teal-900 text-teal-200 border-teal-700",
+                    "bg-red-900 text-red-200 border-red-700"
+                ] : [
+                    "bg-blue-100 text-blue-800 border-blue-200",
+                    "bg-green-100 text-green-800 border-green-200", 
+                    "bg-purple-100 text-purple-800 border-purple-200",
+                    "bg-orange-100 text-orange-800 border-orange-200",
+                    "bg-pink-100 text-pink-800 border-pink-200",
+                    "bg-indigo-100 text-indigo-800 border-indigo-200",
+                    "bg-teal-100 text-teal-800 border-teal-200",
+                    "bg-red-100 text-red-800 border-red-200"
+                ];
+
+                const tagsHtml = proj.tags.map((t, tagIdx) => {
+                    const colorClass = tagColors[tagIdx % tagColors.length];
+                    return `<span class="text-xs rounded-full border px-2 py-0.5 transition-all duration-200 hover:scale-105 ${colorClass}">${t}</span>`;
+                }).join('');
+
+                const cardClasses = clickable ? 
+                    `group block overflow-hidden rounded-3xl border backdrop-blur-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] ${isDarkMode ? 'border-gray-700/50 bg-gray-800/60 hover:border-indigo-400/50' : 'border-white/50 bg-white/60 hover:border-indigo-200/50'} shadow-xl` :
+                    `block overflow-hidden rounded-3xl border backdrop-blur-md ${isDarkMode ? 'border-gray-700/50 bg-gray-800/60' : 'border-white/50 bg-white/60'} shadow-xl`;
+
+                const imageClasses = clickable ? 
+                    `h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.05]` :
+                    `h-full w-full object-contain transition-transform duration-300`;
+
+                const titleClasses = clickable ? 
+                    `font-semibold group-hover:underline underline-offset-2` :
+                    `font-semibold`;
+
+                const descriptionClasses = isDarkMode ? 'text-gray-300' : 'text-neutral-700';
+
+                const overlayHtml = clickable ? 
+                    `<div class="absolute inset-0 bg-gradient-to-t ${isDarkMode ? 'from-gray-900/20 to-transparent' : 'from-white/20 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>` :
+                    '';
+
+                const cardContent = `
+                    <div class="relative aspect-[16/9] overflow-hidden">
+                        <img src="${proj.image}" alt="Project visual" class="${imageClasses}" />
+                        <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500"></div>
+                        ${overlayHtml}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="${titleClasses}">${proj.title}</h3>
+                        <p class="mt-1 text-sm line-clamp-2 ${descriptionClasses}">${proj.description}</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            ${tagsHtml}
+                        </div>
+                    </div>
+                `;
+
+                if (clickable) {
+                    return `<a href="${proj.href}" target="_blank" rel="noreferrer" class="${cardClasses}">${cardContent}</a>`;
+                } else {
+                    return `<div class="${cardClasses}">${cardContent}</div>`;
+                }
+            }
+
+            // Render projects for current page
+            function renderProjects() {
+                const start = (currentPage - 1) * PAGE_SIZE;
+                const visible = PROJECTS.slice(start, start + PAGE_SIZE);
+                const projectsGrid = document.getElementById('projectsGrid');
+                
+                projectsGrid.innerHTML = visible.map((proj, idx) => generateProjectCard(proj, idx)).join('');
+            }
+
+            // Load dark mode preference from localStorage
+            function loadDarkMode() {
+                const savedTheme = localStorage.getItem('darkMode');
+                if (savedTheme !== null) {
+                    isDarkMode = JSON.parse(savedTheme);
+                } else {
+                    // Check system preference
+                    isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                }
+                applyDarkMode();
+            }
+
+            // Save dark mode preference to localStorage
+            function saveDarkMode() {
+                localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+            }
+
+            // Apply dark mode exactly like your React app
+            function applyDarkMode() {
+                const body = document.body;
+                const toggleBtn = document.querySelector('button[aria-label="Toggle dark mode"]');
+                
+                if (isDarkMode) {
+                    // Add dark class to body
+                    body.classList.add('dark');
+                    
+                    // Toggle button - exact match to React
+                    toggleBtn.innerHTML = '<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>';
+                    
+                } else {
+                    // Remove dark class from body
+                    body.classList.remove('dark');
+                    
+                    // Toggle button - exact match to React
+                    toggleBtn.innerHTML = '<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>';
+                }
+                
+                // Re-render projects with new dark mode colors
+                renderProjects();
+            }
+
+            function toggleDarkMode() {
+                isDarkMode = !isDarkMode;
+                applyDarkMode();
+                saveDarkMode();
+            }
+
+            function prevPage() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePagination();
+                    renderProjects();
+                }
+            }
+
+            function nextPage() {
+                const totalPages = Math.ceil(PROJECTS.length / PAGE_SIZE);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePagination();
+                    renderProjects();
+                }
+            }
+
+            function updatePagination() {
+                const totalPages = Math.ceil(PROJECTS.length / PAGE_SIZE);
+                document.getElementById('currentPage').textContent = currentPage;
+                document.getElementById('totalPages').textContent = totalPages;
+                document.getElementById('prevBtn').disabled = currentPage === 1;
+                document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            }
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                loadDarkMode();
+                updatePagination();
+                renderProjects();
+            });
+        </script>
+    </div>
+</body>
+</html>

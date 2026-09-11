@@ -1,0 +1,7 @@
+.DS_Store
+set_env.sh
+.env
+.env.*
+*.aux
+*.log
+*.out
